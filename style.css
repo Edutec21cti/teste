@@ -1,1 +1,223 @@
-/* Add styles here */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --verde-base: #283D28;
+    --letra-menu: #FFFFFF;
+    --precisa-bloco: #507A4F;
+    --precisa-letra: #DCC6AA;
+    --bloco-ajuda: #E4FFC9;
+    --bloco-enviar: #D5EC9F;
+    --letra-enviar: #003713;
+    --letra-marrom: #633216;
+    --linha: #000000;
+    --verde-escuro: #1f3a23;
+
+}
+
+body {
+    margin: 0;
+    font-family: , sans-serif;
+  }
+  
+  .btnHamburguer {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100; /* na frente do menu */
+  }
+  .btnHamburguer img {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* Menu lateral escondido à direita */
+  nav.menuHamburguer {
+    position: fixed;
+    top: 0;
+    right: -280px; /* escondido fora da tela */
+    width: 280px;
+    height: 100vh;
+    background-color: var(--verde-escuro); 
+    color: var(--letra-menu);
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: -3px 0 10px rgba(0,0,0,0.3);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 15px 0 0 15px;
+  }
+
+  /* Quando o menu estiver aberto */
+  nav.menuHamburguer.aberto {
+    right: 0;
+  }
+
+  /* Botão fechar no topo do menu */
+  .btnFecharMenu {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    color: var(--letra-menu);
+    font-size: 28px;
+    cursor: pointer;
+  }
+
+  /* Logo dentro do menu */
+  nav.menuHamburguer img.logoMenu {
+    width: 250;
+    height: 160;
+    angle: 0 deg;
+    opacity: 1;
+    top: 23px;
+    left: 50px;
+    
+  }
+
+  /* Links do menu */
+  nav.menuHamburguer a {
+    font-family: league Spartan;
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 14.5px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+  }
+  nav.menuHamburguer a:hover {
+   color: var(--bloco-enviar);
+  }
+
+
+  .precisaDeAjuda {
+    display: flex;
+    margin-top: auto; 
+    justify-content: center;
+    padding: 10px 0;
+  }
+  /* Botão "Precisa de ajuda?" dentro do menu */
+  .precisaDeAjuda button {
+   padding: 10px;
+    width: 177;
+    height: 72;
+     angle: 0 deg;
+    border-radius: 10px;
+    background-color:var(--precisa-bloco); 
+    border: none;
+    color: var(--precisa-letra);
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .precisaDeAjuda button:hover {
+    background-color: #3e653b;
+  }
+
+  /* Estilização dos dialogs */
+
+  /* Fundo escuro translúcido do backdrop */
+  dialog::backdrop {
+    background: rgba(31, 58, 35, 0.9);
+  }
+
+  /* Dialog geral */
+  dialog {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+  /* Estilo unificado para ambos os modals */
+  .modal-content {
+    background-color: #21332b;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    border-radius: 8px;
+
+  }
+
+  /* Botão fechar nos modais */
+  .modal-content .fechar {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--bloco-enviar);
+  }
+
+  /* Estilo do modal de confirmação */
+  #modalConfirmacao .modal-content {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  #modalConfirmacao .modal-content h1 {
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+  #modalConfirmacao .modal-content p {
+    color: var(--letra-marrom);
+    font-size: 18px;
+    margin: 0 auto;
+    max-width: 400px;
+    line-height: 1.5;
+  }
+
+  /* Inputs do formulário */
+  label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 15px;
+    line:var(--verde-escuro)
+    border: none;
+    background-color: #e2ffc4;
+    color: #13331e;
+    font-size: 16px;
+    margin-bottom: 20px;
+    resize: vertical;
+    box-sizing: border-box;
+  }
+
+  /* Botão enviar do formulário */
+  form button[type="submit"] {
+    display: block;
+    margin: 0 auto;
+    background-color: #cde39f;
+    color: #13331e;
+    font-size: 18px;
+    padding: 10px 40px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  form button[type="submit"]:hover {
+    background-color: #a1bf6f;
+  }
