@@ -5,67 +5,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Menu Hambúrguer com Modal</title>
   <link href="style.css" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Sanchez:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Sanchez:ital@0;1&display=swap" rel="stylesheet" />
   <script src="main.js" defer></script>
 </head>
 <body>
-   <!-- Botão hamburguer para abrir o menu -->
-  <button id="btnHamburguer" aria-label="Abrir menu">
+  
+  <button id="btnHamburguer" aria-label="Abrir menu" class="btnHamburguer">
     <img src="./img_edutec/menuHamburguer.png" alt="ícone do menu hamburguer" />
   </button>
 
-  <!-- Menu lateral escondido -->
-  <nav class="menuHamburguer" aria-label="Menu de navegação">
-    <button id="btnFecharMenu" aria-label="Fechar menu">&times;</button>
+  <div id="containerGeral">
 
-    <img class="logoMenu" src="./img_edutec/logo_hamburguer.png" alt="Logo AgroTtech" />
+    <nav class="menuHamburguer" aria-label="Menu de navegação">
+      <button id="btnFecharMenu" aria-label="Fechar menu" class="btnFecharMenu">&times;</button>
 
-    <!-- Links do menu -->
-    <a href="./index.html">HOME</a>
-    <a href="./index.html">TECNOLOGIA NO CAMPO</a>
-    <a href="./contribuicaoAoPib.html">CONTRIBUIÇÃO AO PIB</a>
-    <a href="./contribuicaoAoPib.html">LOGÍSTICA E EXPORTAÇÃO</a>
-    <a href="./sustentabilidade.html">SUSTENTABILIDADE</a>
-    <a href="./comoFunciona.html">COMO FUNCIONA ?</a>
-    <a href="./casosDeSucesso.html">CASOS DE SUCESSO DO AGRONEGÓCIO</a>
-    <a href="./feirasEeventos.html">FEIRAS E EVENTOS</a>
-    <a href="./jogo1.html">PRATICANDO</a>
-    <a href="./sobreNos.html">SOBRE NÓS</a>
+      <img class="logoMenu" src="./img_edutec/logo_hamburguer.png" alt="Logo AgroTtech" />
 
-    <!-- Botão para abrir o modal de ajuda -->
-    <div class="precisaDeAjuda">
-      <button id="btnAbrirModal">PRECISA DE AJUDA?</button>
+      <a href="./index.html">HOME</a>
+      <a href="./index.html">TECNOLOGIA NO CAMPO</a>
+      <a href="./contribuicaoAoPib.html">CONTRIBUIÇÃO AO PIB</a>
+      <a href="./contribuicaoAoPib.html">LOGÍSTICA E EXPORTAÇÃO</a>
+      <a href="./sustentabilidade.html">SUSTENTABILIDADE</a>
+      <a href="./comoFunciona.html">COMO FUNCIONA ?</a>
+      <a href="./casosDeSucesso.html">CASOS DE SUCESSO DO AGRONEGÓCIO</a>
+      <a href="./feirasEeventos.html">FEIRAS E EVENTOS</a>
+      <a href="./jogo1.html">PRATICANDO</a>
+      <a href="./sobreNos.html">SOBRE NÓS</a>
+
+      <div class="precisaDeAjuda">
+        <button id="btnAbrirModal">PRECISA DE AJUDA?</button>
+      </div>
+    </nav>
+
+    <dialog id="modalForm">
+      <div class="modal-content">
+        <button class="fechar" aria-label="Fechar formulário">&times;</button>
+        <form id="formContato">
+          <label for="email">Digite seu e-mail:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="mensagem">Digite sua dúvida:</label>
+          <textarea id="mensagem" name="mensagem" required rows="5"></textarea>
+
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </dialog>
+
+    <dialog id="modalConfirmacao">
+      <div class="modal-content">
+        <button class="fechar">&times;</button>
+        <div class="centralizar-retangulo">
+          <div class="retangulo">
+            <h1>Obrigado por nos contatar!</h1> 
+              <div class="linha"></div>
+             <p> Ficamos felizes com <em>seu</em> interesse e em breve retornaremos com mais informações. Estamos à disposição para ajudar no que for preciso. </p>
+          </div>
+        </div>
+      </div>
+    </dialog>
     </div>
-  </nav>
 
-  <!-- Modal de formulário -->
-  <dialog id="modalForm">
-    <div class="modal-content">
-      <button class="fechar" aria-label="Fechar formulário">&times;</button>
-      <form id="formContato">
-        <label for="email">Digite seu e-mail:</label>
-        <input type="email" id="email" name="email" required />
-
-        <label for="mensagem">Digite sua dúvida:</label>
-        <textarea id="mensagem" name="mensagem" required rows="5"></textarea>
-
-        <button type="submit">Enviar</button>
-      </form>
-    </div>
-  </dialog>
-
-  <!-- Modal de confirmação -->
-  <dialog id="modalConfirmacao">
-    <div class="modal-content">
-      <button class="fechar" aria-label="Fechar confirmação">&times;</button>
-      <h1>Obrigado por nos contatar!</h1>
-      <p>Ficamos felizes com seu interesse e em breve retornaremos com mais informações. Estamos à disposição para ajudar no que for preciso.</p>
-    </div>
-  </dialog>
 </body>
 </html>

@@ -41,6 +41,6 @@ document.getElementById('formContato').addEventListener('submit', (e) => {
   // Mostrar modal de confirmação
   modalConfirmacao.showModal();
 
-  // Opcional: limpar o formulário após envio
+  // Limpar o formulário após envio
   e.target.reset();
 });
